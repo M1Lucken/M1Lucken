@@ -1,18 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
 <html>
+  <head>
+  <!-- meta stuff -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- https redirect -->
   <script type="text/javascript">
     var host = "www.m1lucken.com";
     if ((host == window.location.host) && (window.location.protocol != "https:"))
       window.location.protocol = "https";
   </script>
   <link rel="canonical" href="https://m1lucken.com"/>
-  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-  <title>Matt Luckenbihl</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- old css -->
   <link rel="stylesheet" href="m1.css">
+  
+  <title>Matt Luckenbihl</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  
+  </head>
+  
   <body>
-
-    <h2 class="m1-center">...</h2>
+  <script>
+      jQuery('body').css('display','none');
+	  jQuery(document).ready(function() {
+	      jQuery('body').fadeIn();
+		  jQuery('a').on('click',function(event){
+		      var  thetarget = this.getAttribute('target')
+			  if (thetarget != "_blank"){
+			      var thehref = this.getAttribute('href')
+				  event.preventDefault();
+				  jQuery('body').fadeOut(function(){
+				      window.location = thehref
+			      });
+			  }
+		  });
+      });
+  </script>
+  
+  <!-- old site for testing scripts -->
+  <h2 class="m1-center">...</h2>
 
     <div class="m1-content m1-display-container">
       <img class="mySlides m1-animate-top" src="https://i.imgur.com/dkKlRbq.jpg" style="width:100%">
@@ -44,6 +74,15 @@
       x[slideIndex-1].style.display = "block";  
     }
     </script>
-
+  
+  
+  
+  
+  
+  <!-- page js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
+  
 </html>
